@@ -1,16 +1,102 @@
-1 - define features
-like "add task", "delete task", "mark task as complete" # and "view tasks" keep it simple
 
-2 - project structure - create a folder named "TODO_APP" - inside it, create a subfolder named "text" - create a file named "tasks.txt" to store tasks
+---
 
-3 - app setup - create a Python script named "todo_app.py" - import necessary libraries like os for file handling
+## How to Run the Automated Tests
 
-4 - models - define a Task class with attributes like id, title, description, and status - implement methods to add, delete, and update tasks
+### Option 1: Direct pytest Command
+```bash
+# Run all tests
+pytest
 
-5 - roots - create functions for each feature: - add_task(title, description) - delete_task(task_id) - mark_task_complete(task_id) - view_tasks()
+# Run with coverage report
+pytest --cov=app tests/
+```
 
-6 - HTML templates - create a simple HTML file to display tasks and forms for adding tasks - use Flask or Django for rendering templates
+### Option 2: Using the Run Script
+```bash
+./scripts/run_tests.sh
+```
 
-7 - css - create a CSS file to style the HTML page - keep it simple with basic styles for tasks and forms
+### Option 3: GitHub Actions (Automatic)
+Push code to the repository and tests will run automatically via the workflow in `.github/workflows/tests.yml`
 
-8 - database init - use a simple text file or SQLite for storing tasks - implement functions to read and write tasks to the file - ensure tasks are stored in a structured format like JSON or CSV
+---
+
+## Test Execution Results
+
+### Latest Test Run
+- **Date:** [Check-in 1 Date]
+- **Unit Tests:** Pending (will complete by Check-in 2)
+- **UI Tests:** Pending (will complete by Check-in 2)
+- **Linting:** [Results to follow]
+
+---
+
+## Key Findings (to be updated throughout project)
+
+### Confirmed Defects
+1. **Clear All Tasks – No Confirmation Prompt**
+   - Severity: High (Data Loss Risk)
+   - Impact: Users can accidentally delete all tasks with a single click
+   - Status: Documented and to be formally investigated in Check-in 2
+
+2. **Member Since Placeholder (Profile Page)**
+   - Severity: Medium (Incomplete Feature)
+   - Impact: Profile page shows placeholder text instead of join date
+   - Status: Identified during code review
+
+### Missing or Unclear Requirements
+- Password requirements not communicated
+- Task title edit functionality not available
+- Duplicate username error handling unclear
+
+---
+
+## GitHub Actions CI/CD
+
+This repository includes an automated GitHub Actions workflow that:
+- Runs all pytest tests on every push
+- Runs flake8 and pylint for code quality
+- Generates test reports
+
+See `.github/workflows/tests.yml` for configuration.
+
+---
+
+## Project Deliverables
+
+- ✅ **Word Report** – [Link to shared Word document] (Check-in 1 sections 1-7 complete)
+- 📋 **GitHub Repository** – This repository
+- 📊 **Azure DevOps Board** – [Link to project board]
+- 🎯 **PowerPoint Presentation** – (To be completed for final submission)
+
+---
+
+## Related Documentation
+
+- **Project Instructions:** See `Capstone-Project-Instructions.pdf`
+- **Check-in 1 Word Report:** [Link to shared document]
+- **Azure DevOps Board:** [Link to board]
+
+---
+
+## Contact & Support
+
+For questions or issues related to this testing project, contact:
+- **Aaron Abeiku Ackon** (Repository Lead): aaron.ackon@...[school email]
+- **Melonie Matho Mboh** (Tracking Lead): melonie.mboh@...[school email]
+- **Charles Nnebedum** (Documentation Lead): charles.nnebedum@...[school email]
+
+---
+
+## License
+
+This project is based on the Flask TODO App from [Swappy514](https://github.com/Swappy514/Flask-TODO-APP).
+Testing work is part of an educational capstone project.
+
+---
+
+## Next Steps
+
+- **By Check-in 2:** Complete all automated tests, exploratory testing, and defect investigations
+- **Final Submission:** Finalize all sections, include test evidence, and prepare presentation
