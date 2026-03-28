@@ -1,113 +1,106 @@
-**📝 Flask TODO App**
+# Flask TODO App - Capstone Testing Project
 
-A **simple yet powerful full-stack Task Manager** built with Flask!
-Manage your daily tasks, authenticate users, and keep your workspace organized—all in a responsive, modern web interface.
-Perfect for beginners, students, and anyone interested in learning Flask, web development, and CRUD operations!
+## Project Overview
+This repository contains the capstone testing project for **CMP1979 Modern Software Development**. 
+The group has completed a focused black-box and white-box testing engagement on the **Flask TODO App**, 
+a simple task management web application.
 
+---
 
-**🔥 Project Highlights** 
+## Group Members
+- **Melonie Matho Mboh** (A00314636) – Quality Analysis & Tracking Lead
+- **Aaron Abeiku Ackon** (A00310246) – Automation & Repository Lead
+- **Charles Nnebedum** (A00331872) – Test Design & Documentation Lead
 
-- **User Authentication** (Register & Login)
-- **CRUD Operations** (Create, Read, Update, Delete Tasks)
-- **User Profile Management**
-- **Responsive UI** with custom CSS & modern layout
-- **Modular Flask Blueprint Structure**
-- **Ready For Deployment** on platforms like Heroku, PythonAnywhere, or locally
+---
 
+## Application Under Test
+**Flask TODO App** – A lightweight, full-stack task management web application built with Flask and SQLite.
 
-**📚 Topics Covered**
+### Key Features
+- User registration and authentication (login/logout)
+- Task creation and deletion with confirmation
+- Task lifecycle management (status cycling: Pending → Working → Done)
+- Bulk task deletion via "Clear All Tasks" button
+- User profile display
 
-- Flask Web Framework
-- RESTful Routing & Blueprints
-- SQL Database & ORM Models
-- Template Rendering (Jinja2)
-- Static Files (CSS/JS) Management
-- User Authentication & Authorization
-- Responsive Web Design
+### Repository
+**Original Project:** https://github.com/Swappy514/Flask-TODO-APP
 
+---
 
-**🚀 Get Started**
+## Project Summary
+This testing project focuses on three core workflows:
+1. **User Authentication** – Registration, login, logout
+2. **Task Management** – Creating and deleting tasks
+3. **Task Lifecycle Management** – Status transitions and bulk deletion
 
-1. **Clone the repository**
-```
-   git clone https://github.com/Swappy514/Flask_TODO-APP.git
-   cd Flask_TODO-APP
-```
+### Key Testing Activities
+- **Black-Box Testing:** Equivalence partitioning and boundary value analysis on forms
+- **White-Box Testing:** Code-level analysis of authentication and task logic
+- **Exploratory Testing:** Two time-boxed sessions on edge cases and defect discovery
+- **Static Analysis:** PEP 8 and code quality checks using flake8 and pylint
+- **Automated Testing:** UI-level and unit-level tests using Playwright and pytest
+- **Non-Functional Testing:** Accessibility compliance (WCAG 2.1)
 
-2. **Install dependencies**
-```
-   pip install -r requirements.txt
-```
+---
 
-3. **Run the application**
-```
-   python run.py
-```
+## Setup Instructions
 
-4. **Open your browser**
-```
-   Visit http://localhost:5000 and start managing your tasks!
-```
+### Prerequisites
+- Python 3.8 or higher
+- pip (Python package manager)
+- Git
 
-**🗂️ Project Structure**
-
-```
-
-TODO_App/
-│
-├── app/
-│ ├── **init**.py
-│ ├── models.py
-│ ├── routes/
-│ │ ├── auth.py
-│ │ ├── tasks.py
-│ │ └── profile.py
-│ ├── static/
-│ │ ├── css/
-│ │ │ └── style.css
-│ │ └── js/
-│ └── templates/
-│ ├── base.html
-│ ├── login.html
-│ ├── register.html
-│ ├── tasks.html
-│ └── profile.html
-├── run.py
-└── text
-└── README.md
-
+### 1. Clone the Repository
+```bash
+git clone https://github.com/YOUR_USERNAME/Flask-TODO-APP-Testing.git
+cd Flask-TODO-APP-Testing
 ```
 
-**✨ Features**
+### 2. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
 
-- **Beautiful, Customizable UI**
-- **Seamless User Authentication**
-- **Efficient Task Management**
-- **Clean, Modular Codebase for Easy Extension**
-- **Learn Best Practices in Flask Development**
+### 3. Run the Flask Application
+```bash
+# Set environment variables
+export FLASK_APP=app.py
+export FLASK_ENV=development
 
-**💡 Use Cases**
-- Personal Task Management
-- Learning Flask Web Development
-- Educational Project (for Bootcamps, Tutorials)
-- Starter Template for Full-Stack Apps
+# Run the app
+flask run
+```
+The application will be available at `http://localhost:5000`
 
-**🛠️ Technologies Used**
-- Python, Flask, Jinja2
-- HTML5, CSS3, JavaScript
-- SQLAlchemy ( using ORM)
-- Bootstrap
-- Deployable on any cloud or local server
+### 4. Run the Automated Tests
+```bash
+# Run all tests
+pytest
 
-**🤝 Contributing**
-- Pull requests and stars are always welcome!
-- Please read the contribution guidelines first.
+# Run only unit tests
+pytest tests/unit/
 
+# Run only UI tests
+pytest tests/ui/
 
-**📢 Keywords**
-- Flask TODO App, Python Task Manager, Flask CRUD Application, Flask Authentication, Web App Flask, Flask Project Example, Flask Tutorial, Task Manager Web App, Personal Productivity, Open Source Flask Projects
+# Run with verbose output
+pytest -v
 
+# Run a specific test file
+pytest tests/unit/test_task_lifecycle.py
+```
 
-**⭐ Show your support!**
-- If you like this project, please star it on GitHub! ⭐
-- Feel free to fork, modify, and use it in your own projects.
+### 5. Run Static Analysis
+```bash
+# Run flake8
+flake8 app/
+
+# Run pylint
+pylint app/auth.py app/tasks.py
+```
+
+---
+
+## Repository Structure
