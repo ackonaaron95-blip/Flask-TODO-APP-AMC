@@ -102,5 +102,3 @@ pylint app/auth.py app/tasks.py
 ```
 
 ---
-
-## Repository Structure
