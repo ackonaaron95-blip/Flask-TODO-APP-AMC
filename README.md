@@ -105,28 +105,28 @@ pylint app/auth.py app/tasks.py
 
 ## Repository Structure
 Flask-TODO-APP-Testing/
-├── README.md # This file
-├── requirements.txt # Python dependencies
-├── tests/ # Automated test files
-│ ├── unit/ # Unit tests (pytest)
-│ │ └── test_task_lifecycle.py
-│ ├── ui/ # UI tests (Playwright)
-│ │ ├── test_login.py
-│ │ └── test_task_management.py
-│ └── conftest.py # pytest configuration
-├── evidence/ # Test results and artifacts
-│ ├── screenshots/ # Screenshots from testing
-│ ├── test_results/ # Test execution logs
-│ └── static_analysis/ # flake8 and pylint output
-├── models/ # State diagrams and design artifacts
-│ └── task_state_diagram.md # State transition model
-├── scripts/ # Helper scripts
-│ ├── setup_test_env.sh # Environment setup
-│ └── run_tests.sh # Test execution script
-├── .github/
-│ └── workflows/
-│ └── tests.yml # GitHub Actions CI/CD
-└── app/ # Original application code
+── README.md # This file
+── requirements.txt # Python dependencies
+── tests/ # Automated test files
+ ── unit/ # Unit tests (pytest)
+  ── test_task_lifecycle.py
+  ── ui/ # UI tests (Playwright)
+     ── test_login.py
+     ── test_task_management.py
+   ── conftest.py # pytest configuration
+ ── evidence/ # Test results and artifacts
+   ── screenshots/ # Screenshots from testing
+   ── test_results/ # Test execution logs
+   ── static_analysis/ # flake8 and pylint output
+ ── models/ # State diagrams and design artifacts
+   ── task_state_diagram.md # State transition model
+ ── scripts/ # Helper scripts
+   ── setup_test_env.sh # Environment setup
+   ── run_tests.sh # Test execution script
+ ── .github/
+   ── workflows/
+   ── tests.yml # GitHub Actions CI/CD
+ ── app/ # Original application code
 ├── auth.py # Authentication logic
-├── tasks.py # Task management logic
+ ── tasks.py # Task management logic
 └── ...
