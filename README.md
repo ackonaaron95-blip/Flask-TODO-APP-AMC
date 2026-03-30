@@ -105,57 +105,47 @@ pylint app/auth.py app/tasks.py
 
 ## Repository Structure
 Flask-TODO-APP/
-│
-├── app/                          # Application source code (original Flask app)
-│   ├── __init__.py               # App factory and Flask configuration
-│   ├── models.py                 # SQLAlchemy models (User, Task)
-│   ├── auth/                     # Authentication blueprint
+├── app/                              # Main Flask application package
+│   ├── __init__.py                   # App factory and application setup
+│   ├── models.py                     # Database models for users and tasks
+│   ├── static/                       # Static assets such as CSS, JS, and images
+│   ├── templates/                    # HTML templates rendered by Flask
+│   ├── auth/                         # Authentication module / blueprint
 │   │   ├── __init__.py
-│   │   ├── routes.py             # Register, login, logout routes
-│   │   └── forms.py              # WTForms for login and registration
-│   ├── tasks/                    # Task management blueprint
+│   │   ├── forms.py                  # Login and registration forms
+│   │   └── routes.py                 # Login, logout, and registration routes
+│   ├── tasks/                        # Task management module / blueprint
 │   │   ├── __init__.py
-│   │   ├── routes.py             # Task creation, deletion, status cycling
-│   │   └── forms.py              # Task input form
-│   ├── profile/                  # User profile blueprint
-│   │   ├── __init__.py
-│   │   └── routes.py             # Profile display route
-│   ├── static/                   # CSS and static assets
-│   └── templates/                # Jinja2 HTML templates
-│       ├── base.html
-│       ├── auth/
-│       ├── tasks/
-│       └── profile/
+│   │   ├── forms.py                  # Task creation or update forms
+│   │   └── routes.py                 # Create, view, update, and delete task routes
+│   └── profile/                      # User profile module / blueprint
+│       ├── __init__.py
+│       └── routes.py                 # Profile-related routes
 │
-├── instance/                     # SQLite database (auto-generated, gitignored)
-│   └── todo.db
+├── instance/                         # Instance-specific files such as local SQLite DB
+│   └── todo.db                       # Local database file (may be generated at runtime)
 │
-├── tests/                        # All testing artifacts (added by our group)
-│   ├── ui/                       # Playwright end-to-end UI tests
-│   │   ├── test_login_logout.py  # TC-AUTH-01: Valid login and logout flow
-│   │   └── test_task_crud.py     # TC-TASK-01: Task creation and deletion
-│   ├── unit/                     # pytest unit tests
-│   │   └── test_task_status.py   # TC-LIFE-01: Status cycling logic (Pending→Working→Done)
-│   └── conftest.py               # Shared fixtures and test configuration
+├── tests/                            # Automated test files added for the capstone
+│   ├── unit/                         # Unit tests for isolated logic
+│   │   └── test_task_status.py       # Example: task status transition logic test
+│   ├── ui/                           # End-to-end / UI tests using Playwright
+│   │   ├── test_login_logout.py      # Login and logout workflow test
+│   │   └── test_task_management.py   # Task creation/deletion workflow test
+│   └── conftest.py                   # Shared fixtures and test configuration
 │
-├── evidence/                     # Testing evidence and artifacts
-│   ├── screenshots/              # Screenshots from exploratory and UI testing
-│   ├── static-analysis/          # flake8 and pylint output logs
-│   ├── accessibility/            # axe DevTools accessibility scan results
-│   └── models/                   # State transition diagram image
+├── evidence/                         # Testing evidence and supporting artifacts
+│   ├── screenshots/                  # UI screenshots from manual or automated testing
+│   ├── logs/                         # flake8, pylint, and test execution logs
+│   ├── accessibility/                # Accessibility scan evidence
+│   └── models/                       # State-model diagrams or workflow visuals
 │
 ├── .github/
 │   └── workflows/
-│       └── ci.yml                # GitHub Actions: automated test and lint pipeline
+│       └── ci.yml                    # GitHub Actions workflow for linting and tests
 │
-├── .gitignore
-├── LICENSE
-├── README.md                     # This file
-├── requirements.txt              # Python dependencies (Flask, Playwright, pytest, flake8, pylint)
-└── run.py                        # Application entry point
-
-   ── tests.yml # GitHub Actions CI/CD
- ── app/ # Original application code
-├── auth.py # Authentication logic
- ── tasks.py # Task management logic
-└── ...
+├── .gitignore                        # Files and folders ignored by Git
+├── LICENSE                           # Project license
+├── README.md                         # Repository overview and setup guide
+├── requirements.txt                  # Python package dependencies
+├── run.py                            # Application entry point
+└── text                              # Existing project text/support file from repository
