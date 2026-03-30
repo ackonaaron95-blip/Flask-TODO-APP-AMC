@@ -104,27 +104,56 @@ pylint app/auth.py app/tasks.py
 ---
 
 ## Repository Structure
-Flask-TODO-APP-Testing/
-── README.md # This file
-── requirements.txt # Python dependencies
-── tests/ # Automated test files
- ── unit/ # Unit tests (pytest)
-  ── test_task_lifecycle.py
-  ── ui/ # UI tests (Playwright)
-     ── test_login.py
-     ── test_task_management.py
-   ── conftest.py # pytest configuration
- ── evidence/ # Test results and artifacts
-   ── screenshots/ # Screenshots from testing
-   ── test_results/ # Test execution logs
-   ── static_analysis/ # flake8 and pylint output
- ── models/ # State diagrams and design artifacts
-   ── task_state_diagram.md # State transition model
- ── scripts/ # Helper scripts
-   ── setup_test_env.sh # Environment setup
-   ── run_tests.sh # Test execution script
- ── .github/
-   ── workflows/
+Flask-TODO-APP/
+│
+├── app/                          # Application source code (original Flask app)
+│   ├── __init__.py               # App factory and Flask configuration
+│   ├── models.py                 # SQLAlchemy models (User, Task)
+│   ├── auth/                     # Authentication blueprint
+│   │   ├── __init__.py
+│   │   ├── routes.py             # Register, login, logout routes
+│   │   └── forms.py              # WTForms for login and registration
+│   ├── tasks/                    # Task management blueprint
+│   │   ├── __init__.py
+│   │   ├── routes.py             # Task creation, deletion, status cycling
+│   │   └── forms.py              # Task input form
+│   ├── profile/                  # User profile blueprint
+│   │   ├── __init__.py
+│   │   └── routes.py             # Profile display route
+│   ├── static/                   # CSS and static assets
+│   └── templates/                # Jinja2 HTML templates
+│       ├── base.html
+│       ├── auth/
+│       ├── tasks/
+│       └── profile/
+│
+├── instance/                     # SQLite database (auto-generated, gitignored)
+│   └── todo.db
+│
+├── tests/                        # All testing artifacts (added by our group)
+│   ├── ui/                       # Playwright end-to-end UI tests
+│   │   ├── test_login_logout.py  # TC-AUTH-01: Valid login and logout flow
+│   │   └── test_task_crud.py     # TC-TASK-01: Task creation and deletion
+│   ├── unit/                     # pytest unit tests
+│   │   └── test_task_status.py   # TC-LIFE-01: Status cycling logic (Pending→Working→Done)
+│   └── conftest.py               # Shared fixtures and test configuration
+│
+├── evidence/                     # Testing evidence and artifacts
+│   ├── screenshots/              # Screenshots from exploratory and UI testing
+│   ├── static-analysis/          # flake8 and pylint output logs
+│   ├── accessibility/            # axe DevTools accessibility scan results
+│   └── models/                   # State transition diagram image
+│
+├── .github/
+│   └── workflows/
+│       └── ci.yml                # GitHub Actions: automated test and lint pipeline
+│
+├── .gitignore
+├── LICENSE
+├── README.md                     # This file
+├── requirements.txt              # Python dependencies (Flask, Playwright, pytest, flake8, pylint)
+└── run.py                        # Application entry point
+
    ── tests.yml # GitHub Actions CI/CD
  ── app/ # Original application code
 ├── auth.py # Authentication logic
