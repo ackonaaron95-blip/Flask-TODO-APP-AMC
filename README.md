@@ -104,8 +104,9 @@ pylint app/auth.py app/tasks.py
 ---
 
 ## Repository Structure
-# Flask-TODO-APP/
-├── app/                              # Main Flask application package
+### Flask-TODO-APP/
+app/                              # Main Flask application package
+
 │   ├── __init__.py                   # App factory and application setup
 │   ├── models.py                     # Database models for users and tasks
 │   ├── static/                       # Static assets such as CSS, JS, and images
