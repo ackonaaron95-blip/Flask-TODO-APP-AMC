@@ -127,6 +127,13 @@ Flask-TODO-APP/
 ├── instance/                         # Instance-specific files such as local SQLite DB
 │   └── todo.db                       # Local database file (may be generated at runtime)
 │
+├── .gitignore                        # Files and folders ignored by Git
+├── LICENSE                           # Project license
+├── README.md                         # Repository overview and setup guide
+├── requirements.txt                  # Python package dependencies
+├── run.py                            # Application entry point
+└── text                              # Existing project text/support file from repository
+│
 ├── tests/                            # Automated test files added for the capstone
 │   ├── unit/                         # Unit tests for isolated logic
 │   │   └── test_task_status.py       # Example: task status transition logic test
@@ -144,10 +151,3 @@ Flask-TODO-APP/
 ├── .github/
 │   └── workflows/
 │       └── ci.yml                    # GitHub Actions workflow for linting and tests
-│
-├── .gitignore                        # Files and folders ignored by Git
-├── LICENSE                           # Project license
-├── README.md                         # Repository overview and setup guide
-├── requirements.txt                  # Python package dependencies
-├── run.py                            # Application entry point
-└── text                              # Existing project text/support file from repository
