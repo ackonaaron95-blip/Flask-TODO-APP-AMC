@@ -29,12 +29,6 @@ jobs:
           flake8 tests/ --max-line-length=100 --statistics
         continue-on-error: true
 
-      - name: Run unit tests (no browser required)
+      - name: Run unit tests
         run: |
           pytest tests/test_unit.py -v
-
-      - name: Run UI tests (requires running app)
-        run: |
-          echo "UI tests (test_auth.py, test_tasks.py) require a running Flask app."
-          echo "Run these locally with: pytest tests/test_auth.py tests/test_tasks.py -v"
-          pytest tests/test_unit.py -v --tb=short
