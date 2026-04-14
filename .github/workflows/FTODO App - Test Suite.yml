@@ -1,0 +1,34 @@
+name: Flask TODO App - Test Suite
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout testing repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install test dependencies
+        run: |
+          pip install pytest playwright flake8 pylint
+          playwright install chromium
+
+      - name: Run flake8 linting
+        run: |
+          flake8 tests/ --max-line-length=100 --statistics
+        continue-on-error: true
+
+      - name: Run unit tests
+        run: |
+          pytest tests/test_unit.py -v
