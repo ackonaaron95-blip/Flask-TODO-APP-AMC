@@ -2,9 +2,9 @@ name: Flask TODO App - Test Suite
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   test:
@@ -26,9 +26,9 @@ jobs:
 
       - name: Run flake8 linting
         run: |
-          flake8 tests/ --max-line-length=100 --statistics
+          flake8 . --max-line-length=100 --statistics
         continue-on-error: true
 
       - name: Run unit tests
         run: |
-          pytest tests/test_unit.py -v
+          pytest test_unit.py -v
